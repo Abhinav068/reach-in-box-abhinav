@@ -17,14 +17,15 @@
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
-    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-    let value = params.some_key; // "some_value"
+
+    let token = params.token;
+    console.log(token);
 
 
     async function req() {
         let response = await fetch('https://hiring.reachinbox.xyz/api/v1/onebox/list', {
             method: 'Get',
-            headers: { 'content-type': "application/json", 'AUTHORIZATION': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiYWJoaW5hdjI4ODk3QGdtYWlsLmNvbSIsImlkIjo3LCJmaXJzdE5hbWUiOiJBYmhpbmF2IiwibGFzdE5hbWUiOiJfIn0sImlhdCI6MTcxMTE3ODIwOSwiZXhwIjoxNzQyNzE0MjA5fQ.auRZQmsHVqrjGrSkP2f2ary_GW6M6nCMNcohIKmcqKc' }
+            headers: { 'content-type': "application/json", 'AUTHORIZATION': `Bearer ${token}` }
         })
         let data = await response.json();
         console.log(data)
