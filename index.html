@@ -84,7 +84,7 @@
 
     <section id="account">
         <h3>Create a new account</h3>
-        <div>
+        <div onclick="startlogin()">
             <img src="assets/google_logo.png" alt="google">
             <p>Sign Up with Google</p>
         </div>
@@ -110,6 +110,15 @@
     let token = params.token;
     console.log(token);
 
+    if (token) {
+        localStorage.setItem('Reachtoken', token);
+        window.location.replace('./src/homepage.html');
+    }
+
+    function startlogin() {
+        window.location.href = 'https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reach-in-box-abhinav.vercel.app/';
+
+    }
 
     async function req() {
         let response = await fetch('https://hiring.reachinbox.xyz/api/v1/onebox/list', {
