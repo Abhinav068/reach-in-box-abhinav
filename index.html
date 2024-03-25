@@ -38,7 +38,7 @@
             height: 300px;
             border-radius: 10px;
         }
-
+        
         #account>div {
             display: flex;
             align-items: center;
@@ -48,7 +48,10 @@
             border: 1px solid #707172;
             border-radius: 5px;
         }
-
+        
+        #account>div:hover{
+            cursor: pointer;
+        }
         #account>div>* {
             margin: auto 5px;
         }
@@ -97,8 +100,7 @@
     <section id="footer">
         <p>© 2023 Reachinbox. All rights reserved.</p>
     </section>
-    <!-- Welcome
-    <button onclick="req()">fetch mails</button> -->
+    
 </body>
 
 </html>
@@ -120,13 +122,5 @@
 
     }
 
-    async function req() {
-        let response = await fetch('https://hiring.reachinbox.xyz/api/v1/onebox/list', {
-            method: 'Get',
-            headers: { 'content-type': "application/json", 'AUTHORIZATION': `Bearer ${token}` }
-        })
-        let data = await response.json();
-        console.log(data)
-
-    }
+   
 </script>
