@@ -8,9 +8,9 @@
     <script src="https://kit.fontawesome.com/86ca256ee1.js" crossorigin="anonymous"></script>
     <style>
         #navbar {
-            background-color: aqua;
+            background: #101113;
+            border-right: 1px solid #343A40;
             position: fixed;
-            ;
             left: 0;
             top: 0;
             bottom: 0;
@@ -26,45 +26,100 @@
         #container {
             background-color: rgb(55, 0, 255);
             position: fixed;
-            ;
             left: 50px;
             top: 0;
             bottom: 0;
             right: 0;
-            border: 2px solid yellow;
         }
 
         .clr {
             color: white;
         }
 
-        .items{
+        .items {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            height: 70%;
+            height: 64%;
         }
-        .items>*{
-            display: block;
+
+        .items>div {
             position: relative;
         }
-        .items>i+p{
-            position: absolute;
-            width: 8px;
-            left: 0;
-            top: 0;
+
+        .items i {
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 25px;
+            color: #FFFFFF;
         }
-        .name>h5{
+
+        .items i:hover {
+            cursor: pointer;
+            background: #2F3030;
+        }
+
+        .items i+p {
+            position: absolute;
+            width: auto;
+            height: auto;
+            right: -5px;
+            top: -5px;
+            margin: 0;
+            background-color: red;
+            border-radius: 50%;
+            padding: 6px 2px;
+            font-size: 11px;
+            color: white;
+            font-weight: 900;
+        }
+
+        .name>h5 {
             background-color: green;
             border-radius: 50%;
             padding: 10px;
             font-size: 15px;
             margin: 0;
         }
-        .bg{
-            background-color: yellow;
-            padding: 5px;
-            border-radius: 5px;
+
+        #container {
+            background-color: #000000;
+        }
+
+        #header {
+            background: #1F1F1F;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #header>h4 {
+            margin-left: 30px;
+        }
+
+        #header>div {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 20%;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            color: white;
+        }
+        .no-msg{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .no-msg>p{
+            color: #9E9E9E;
+            width: 50%;
+            text-align: center;
         }
     </style>
 </head>
@@ -75,15 +130,16 @@
             <img src="../assets/site-logo.png" alt="site-logo">
         </div>
         <div class="items">
-            <i class="fa-solid fa-house"></i>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fa-solid fa-paper-plane"></i>
-            <i class="fa-solid fa-list bg"></i>
-            <p>12</p>
-            <i class="fa-solid fa-inbox"></i>
+            <div><i class="fa-solid fa-house"></i></div>
+            <div><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div><i class="fa-solid fa-envelope"></i></div>
+            <div><i class="fa-solid fa-paper-plane"></i></div>
+            <div><i class="fa-solid fa-list bg"></i>
+                <p>12+</p>
+            </div>
+            <div><i class="fa-solid fa-inbox"></i></div>
 
-            <i class="fa-solid fa-chart-simple"></i>
+            <div><i class="fa-solid fa-chart-simple"></i></div>
         </div>
         <div class="name">
             <h5>AS</h5>
@@ -94,10 +150,19 @@
             <h4>Onebox</h4>
             <div>
                 <div id="mode">
-
+                    <img src="../assets/dark_mode.png" alt="dark_mode">
+                    <img src="../assets/ligthmode.png" alt="ligthmode">
                 </div>
                 <p>Tim's Workspace</p>
                 <i class="fa-solid fa-chevron-down" style="color: #e6e7eb;"></i>
+            </div>
+        </div>
+        <div class="main">
+            <div class="no-msg">
+                <img src="../assets/No Message illustration.png" alt="nomessage">
+                <h2>It’s the beginning of a legendary sales pipeline</h2>
+                <p>When you have inbound E-mails you’ll see them here</p>
+
             </div>
         </div>
     </section>
