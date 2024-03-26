@@ -7,6 +7,10 @@
     <title>Reach-in-box</title>
     <script src="https://kit.fontawesome.com/86ca256ee1.js" crossorigin="anonymous"></script>
     <style>
+        .dflex {
+            display: flex;
+        }
+
         #navbar {
             background: #101113;
             border-right: 1px solid #343A40;
@@ -86,40 +90,57 @@
             background-color: #000000;
         }
 
-        #header {
+        .header {
             background: #1F1F1F;
             color: white;
             display: flex;
             justify-content: space-between;
         }
 
-        #header>h4 {
+        .header>h4 {
             margin-left: 30px;
         }
 
-        #header>div {
+        .header>div {
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 20%;
         }
 
-        .main {
-            display: flex;
+        .No-main {
+            display: none;
             justify-content: center;
             align-items: center;
             height: 90vh;
             color: white;
         }
-        .no-msg{
-            display: flex;
+
+        .no-msg {
             flex-direction: column;
             align-items: center;
         }
-        .no-msg>p{
+
+        .no-msg>p {
             color: #9E9E9E;
             width: 50%;
             text-align: center;
+        }
+
+        .main {
+            height: 90vh;
+            color: white;
+        }
+
+        .left,
+        .right {
+            flex-grow: 1;
+            background-color: blue;
+        }
+
+        .middle {
+            flex-grow: 2.5;
+            background-color: green;
         }
     </style>
 </head>
@@ -146,7 +167,7 @@
         </div>
     </section>
     <section id="container">
-        <div id="header">
+        <div class="header">
             <h4>Onebox</h4>
             <div>
                 <div id="mode">
@@ -157,12 +178,22 @@
                 <i class="fa-solid fa-chevron-down" style="color: #e6e7eb;"></i>
             </div>
         </div>
-        <div class="main">
-            <div class="no-msg">
+        <div class="No-main dflex">
+            <div class="no-msg dflex">
                 <img src="../assets/No Message illustration.png" alt="nomessage">
                 <h2>It’s the beginning of a legendary sales pipeline</h2>
                 <p>When you have inbound E-mails you’ll see them here</p>
-
+            </div>
+        </div>
+        <div class="main dflex">
+            <div class="left">
+                
+            </div>
+            <div class="middle">
+                
+            </div>
+            <div class="right">
+                
             </div>
         </div>
     </section>
