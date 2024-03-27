@@ -263,6 +263,7 @@
             width: 50%;
             /* background-color: green; */
             border: 1px solid #343A40;
+            position: relative;
         }
 
         .titlebar {
@@ -353,6 +354,31 @@
             transform: rotate(90deg);
         }
 
+        /* .......................sendmail section...... */
+        .sendmail {
+            position: absolute;
+            bottom: 10px;
+            height: 70vh;
+            left: 10px;
+            right: 10px;
+            border: 1px solid #343A40;
+            background-color: #141517;
+
+        }
+
+        .sendmail>div {
+            border: 1px solid #34383D;
+        }
+
+        .sendmail>.title {
+            background-color: #7F7F7F;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+
+        /* ...........................sendmail section............................... */
         .right>.details {
             margin-bottom: 40px;
         }
@@ -523,6 +549,47 @@
                     <div class="replies date">
                         <p><i class="fa-solid fa-arrows-left-right-to-line"></i>View all <span>4</span> replies</p>
                         <hr>
+                    </div>
+                </div>
+                <div class="sendmail">
+                    <div class="title">
+                        <p>Reply</p>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div>
+                        <p>To:
+                            <input type="email" name="to-email">
+                        </p>
+                    </div>
+                    <div>
+                        <p>From:
+                            <input type="email" name="from-email">
+                        </p>
+                    </div>
+                    <div>
+                        <p>Subject:
+                            <input type="text" name="subject">
+                        </p>
+                    </div>
+                    <div>
+                        <textarea name="message" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="tools">
+                        <button>Send</button>
+
+                        <span><i class="fa-solid fa-bolt-lightning"></i> Variables</span>
+                        <span><i class="fa-solid fa-eye"></i> Preview Email</span>
+                        <span>
+                            <i class="fa-solid fa-a"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </span>
+                        <i class="fa-solid fa-link"></i>
+                        <i class="fa-solid fa-image"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                        <i class="fa-solid fa-user-minus"></i>
+                        <i class="fa-solid fa-angle-left"></i>
+                        <i class="fa-solid fa-angle-right"></i>
+
                     </div>
                 </div>
             </div>
