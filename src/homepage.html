@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reach-in-box</title>
     <script src="https://kit.fontawesome.com/86ca256ee1.js" crossorigin="anonymous"></script>
+
     <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
         .dflex {
             display: flex;
         }
@@ -95,6 +104,8 @@
             color: white;
             display: flex;
             justify-content: space-between;
+            height: 10vh;
+            align-items: center;
         }
 
         .header>h4 {
@@ -134,13 +145,279 @@
 
         .left,
         .right {
-            flex-grow: 1;
-            background-color: blue;
+            width: 25%;
+            /* background-color: blue; */
+            padding: 15px;
+            border: 1px solid #343A40;
+        }
+
+        .left>.dflex {
+            justify-content: space-between;
+        }
+
+        .left h3 {
+            color: #4285F4;
+        }
+
+        .left h3>i {
+            font-size: 12px;
+        }
+
+        .left h3+i {
+            padding: 10px;
+            font-size: 12px;
+            background: #23272C;
+            border-radius: 5px;
+        }
+
+        .left>p {
+            color: #7F7F7F;
+            margin: 5px 0;
+        }
+
+        .left>p>span {
+            color: #ffffff;
+        }
+
+        .left>input {
+            background-color: #23272C;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 10px 0;
+        }
+
+        .left>.dflex>p>span {
+            background-color: #23272C;
+            padding: 4px 10px;
+            border-radius: 38%;
+            color: #4285F4;
+        }
+
+        .left>input+div {
+            margin: 10px 0;
+        }
+
+        .mail {
+            border-top: 1px solid #343A40;
+            border-bottom: 1px solid #343A40;
+            padding: 15px 10px 15px 15px;
+            position: relative;
+
+        }
+
+        .mail>.title {
+            justify-content: space-between;
+        }
+
+        .mail>.title>p {
+            font-size: 19px;
+        }
+
+        .mail>p {
+            color: #E1E0E0;
+            margin: 5px 0;
+        }
+
+        .mail .date {
+            color: #343A40;
+        }
+
+        .mail>.dflex i {
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        .mail>p+div>p {
+            padding: 2px 10px;
+            margin-right: 10px;
+            background-color: #343A40;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .mail .tag {
+            color: #57E0A6;
+        }
+
+        .mail .tag>i,
+        .fa-circle {
+            font-size: 8px;
+        }
+
+        .mail>.seen {
+            position: absolute;
+            left: 0;
+            color: #4285F4;
+        }
+
+        /* .....................MIDDLE................... */
+        .middle i {
+            margin: 5px 10px;
         }
 
         .middle {
-            flex-grow: 2.5;
-            background-color: green;
+            width: 50%;
+            /* background-color: green; */
+            border: 1px solid #343A40;
+        }
+
+        .titlebar {
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #343A40;
+        }
+
+        .titlebar>.name+div {
+            justify-content: space-between;
+            width: 60%;
+        }
+
+        .titlebar>.name+div>p {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: #23272C;
+            justify-content: space-around;
+            border-radius: 5px;
+        }
+
+        .middle .fa-circle {
+            padding: 5px;
+            /* border: 1px solid #57E0A6; */
+            background-color: #444234;
+            color: #E6D162;
+            font-size: 12px;
+            border-radius: 50%;
+        }
+
+        .view {
+            padding: 10px;
+        }
+
+        .view>.date {
+            position: relative;
+        }
+
+        .view>.date>p {
+            /* width: 6%; */
+            width: fit-content;
+            margin: auto;
+            padding: 5px;
+            background-color: #343A40;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .view>.date>p+hr {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            z-index: -1;
+            border: 1px solid #343A40;
+
+        }
+
+        .msg-container {
+            padding: 10px;
+            border: 1px solid red;
+            background-color: #141517;
+            border: 1px solid #343A40;
+            margin: 10px 0;
+        }
+
+        .msg-container>.dflex {
+            justify-content: space-between;
+        }
+
+        .msg-container .date {
+            color: #AEAEAE;
+
+        }
+
+        .msg-container>p {
+            margin: 10px 0;
+            color: #AEAEAE;
+
+        }
+
+        .msg-container .fname {
+            margin: 25px 0;
+        }
+
+        .view>.replies>p>i {
+            transform: rotate(90deg);
+        }
+
+        .right>.details {
+            margin-bottom: 40px;
+        }
+
+        .right h3 {
+            background-color: #23272C;
+            padding: 8px 10px;
+            border-radius: 5px;
+        }
+
+        .right>.details>.body>* {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px;
+        }
+
+        .right>.details>.body>*>p:last-child {
+            color: #B9B9B9;
+        }
+
+        .campaign {
+            padding: 20px;
+        }
+
+        .campaign>* {
+            margin: 10px 0;
+        }
+
+        .steps {
+            position: relative;
+            /* border: 1px solid rgb(0, 255, 64); */
+        }
+
+        .steps>.line {
+            position: absolute;
+            top: 30px;
+            bottom: 38px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        .step {
+            /* border: 1px solid blue; */
+            margin: 10px 0;
+            align-items: center;
+        }
+
+        .step>* {
+            margin: 0 10px 0 0;
+        }
+
+        .step>i {
+            font-size: 20px;
+            border: 1px solid #41464B;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: #23272C;
+        }
+
+        .step .dflex>* {
+            margin: 10px 10px 10px 0;
+        }
+
+        .step>div>p {
+            font-size: 20px;
         }
     </style>
 </head>
@@ -187,13 +464,134 @@
         </div>
         <div class="main dflex">
             <div class="left">
-                
+                <div class="dflex">
+                    <h3>All Inbox(s) <i class="fa-solid fa-chevron-down"></i>
+                    </h3>
+                    <i class="fa-solid fa-rotate-right"></i>
+                </div>
+                <p><span>25/25</span> Inboxes selected</p>
+                <input type="text" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome" />
+                <div class="dflex">
+                    <p><span>26</span> New Replies </p>
+                    <p>Newest <i class="fa-solid fa-chevron-down" style="color: #e6e7eb;"></i></p>
+                </div>
+                <div class="mail">
+                    <div class="seen"><i class="fa-solid fa-circle"></i></div>
+                    <div class="title dflex">
+                        <p>Beata@gmail.com</p>
+                        <p class="date">Mar 7</p>
+                    </div>
+                    <p>I've tried a lot and. </p>
+                    <div class="dflex">
+                        <p class="tag"><i class="fa-solid fa-circle"></i> Interested </p>
+                        <p><i class="fa-solid fa-paper-plane"></i> Compaign Name</p>
+                    </div>
+                </div>
             </div>
             <div class="middle">
-                
+                <div class="titlebar dflex">
+                    <div class="name">
+                        <p class="name">Orlando</p>
+                        <p class="email">orlando@gmail.com</p>
+                    </div>
+                    <div class="dflex">
+                        <p class="status"><i class="fa-solid fa-circle"></i>Meeting Completed
+                            <i class="fa-solid fa-chevron-down" style="color: #e6e7eb;"></i>
+                        </p>
+                        <p>Move <i class="fa-solid fa-chevron-down" style="color: #e6e7eb;"></i></p>
+                        <p class="options">... </p>
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <div class="view">
+                    <div class="date">
+                        <p>Today</p>
+                        <hr>
+                    </div>
+                    <div class="msg-container">
+                        <div class="dflex">
+                            <h4>New Product Launch</h4>
+                            <p class="date"> 20 Jun 2022: 9:16AM</p>
+                        </div>
+                        <p>from: jeanne@icloud.com cc: lennon.j@mail.com</p>
+                        <p>to: lennon.j@mail.com</p>
+                        <p class="fname">Hi {first name}</p>
+                        <p>I would like to introduce you to SaaSgrow, a productized design service specifically tailored
+                            for saas startups. Our aim is to help you enhance the user experience and boost the visual
+                            appeal of your software products.</p>
+                    </div>
+                    <div class="replies date">
+                        <p><i class="fa-solid fa-arrows-left-right-to-line"></i>View all <span>4</span> replies</p>
+                        <hr>
+                    </div>
+                </div>
             </div>
             <div class="right">
-                
+                <div class="details">
+                    <h3>Lead Details</h3>
+                    <div class="body">
+                        <div>
+                            <p>Name</p>
+                            <p>Orlando</p>
+                        </div>
+                        <div>
+                            <p>Contact No</p>
+                            <p>+54-9062827869</p>
+                        </div>
+                        <div>
+                            <p>Email ID</p>
+                            <p>orlando@gmail.com</p>
+                        </div>
+                        <div>
+                            <p>Linkedin</p>
+                            <p>linkedin.com/in/timvadde/</p>
+                        </div>
+                        <div>
+                            <p>Company Name</p>
+                            <p>Reachinbox</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="activities">
+                    <h3>Activities</h3>
+                    <div class="campaign">
+                        <h4>Compaign Name</h4>
+                        <p>3 Steps | 5 Days in Sequence</p>
+                        <div class="steps">
+                            <hr class="line">
+                            <div class="step dflex">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div>
+                                    <p>Step 1: Email</p>
+                                    <div class="dflex">
+                                        <i class="fa-regular fa-paper-plane"></i>
+                                        <p>Sent <span class="date">3rd, Feb</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step dflex">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div>
+                                    <p>Step 1: Email</p>
+                                    <div class="dflex">
+                                        <i class="fa-regular fa-paper-plane"></i>
+                                        <p>Sent <span class="date">3rd, Feb</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step dflex">
+                                <i class="fa-regular fa-envelope"></i>
+                                <div>
+                                    <p>Step 1: Email</p>
+                                    <div class="dflex">
+                                        <i class="fa-regular fa-paper-plane"></i>
+                                        <p>Sent <span class="date">3rd, Feb</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
